@@ -7,6 +7,9 @@ package matc
 double get(double **dpp, int i, int j) {
     return dpp[i][j];
 }
+void set(double **dpp, int i, int j, double x) {
+    dpp[i][j] = x;
+}
 */
 import "C"
 
@@ -25,6 +28,10 @@ func to_cmat(mat Matrix) (cmat C.matrix_t) {
 
 func (mat Matrix)Get(i, j int) float64 {
     return float64(C.get(mat.array, C.int(i), C.int(j)))
+}
+
+func (mat Matrix)Set(i, j int, x float64) {
+    C.set(mat.array, C.int(i), C.int(j), C.double(x))
 }
 
 func Init(row, col int) Matrix {
