@@ -13,7 +13,7 @@ func TestDisplay(t *testing.T) {
     fmt.Println(mat.Get(0, 0))
 
     //Dump("matrix.mat", mat, 'A')
-    Load("test4.mat", mat, 'A')
+    Load("matrix.mat", mat, 'A')
 
     Display(mat)
 

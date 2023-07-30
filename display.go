@@ -1,8 +1,8 @@
 package matc
 
 /*
-#cgo CFLAGS: -I./libmatc/include
-#cgo LDFLAGS: -L./libmatc/lib -lmatc
+#cgo CFLAGS: -I./matc/libmatc/include
+#cgo LDFLAGS: -L./matc/libmatc/lib -lmatc
 #include <display.h>
 #include <stdlib.h>
 */
