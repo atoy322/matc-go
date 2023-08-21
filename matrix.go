@@ -14,14 +14,14 @@ void set(double **dpp, int i, int j, double x) {
 import "C"
 
 type Matrix struct {
-    row int
-    col int
+    Row int
+    Col int
     array **C.double
 }
 
 func to_cmat(mat Matrix) (cmat C.matrix_t) {
-    cmat.row = C.int(mat.row)
-    cmat.col = C.int(mat.col)
+    cmat.row = C.int(mat.Row)
+    cmat.col = C.int(mat.Col)
     cmat.array = mat.array
     return cmat
 }
@@ -36,7 +36,7 @@ func (mat Matrix)Set(i, j int, x float64) {
 
 func Init(row, col int) Matrix {
     cmat := C.matcInit(C.int(row), C.int(col))
-    mat := Matrix{row:row, col:col, array:cmat.array}
+    mat := Matrix{Row:row, Col:col, array:cmat.array}
     return mat
 }
 
